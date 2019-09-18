@@ -111,7 +111,13 @@ fetch('https://api.github.com/users/github')
 
 #### Simple Post
 ```js
-fetch('https://httpbin.org/post', { method: 'POST', body: 'a=1' })
+fetch('https://httpbin.org/post', { 
+    method: 'POST', 
+    body: 'a=1', 
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    })
     .then(res => res.json()) // expecting a json response
     .then(json => console.log(json));
 ```
